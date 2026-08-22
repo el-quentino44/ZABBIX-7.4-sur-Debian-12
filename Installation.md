@@ -6,7 +6,7 @@
 ## Prérequis
 L'installation s'appuie sur la stack **LAMP**, garante d'une infrastructure fiable, performante et 100 % open source :
 - Un système d'exploitation basé sur Linux (**Debian 12**)
-- Un serveur web **Apache2** en mode Event avec **PHP-FPM**
+- Un serveur web **Apache2**
 - Une base de données **MariaDB**
 - Un langage de traitement **PHP**
 
