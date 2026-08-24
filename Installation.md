@@ -65,12 +65,12 @@ sudo mysql -uroot -p
 ```
 - Puis créez la base de données et l'utilisateur :
 ```
-create database nom_de_la_bd character set utf8mb4 collate utf8mb4_bin;
-create user 'zabbix_admin'@'localhost' identified by '@SuperP4ssword';
-grant all privileges on nom_de_la_bd.* to 'zabbix_admin'@'localhost';
-set global log_bin_trust_function_creators = 1;
-grant select on `mysql`.`time_zone_name` to 'zabbix_admin'@'localhost';
-quit;
+CREATE DATABASE nom_de_la_bd CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
+CREATE USER 'zabbix_admin'@'localhost' IDENTIFIED BY '@SuperP4ssword';
+GRANT ALL PRIVILEGES ON nom_de_la_bd.* TO 'zabbix_admin'@'localhost';
+SET GLOBAL log_bin_trust_function_creators = 1;
+GRANT SELECT ON `mysql`.`time_zone_name` TO 'zabbix_admin'@'localhost';
+QUIT;
 ```
 
 - Importez le schéma initial et les données.
@@ -79,8 +79,8 @@ zcat /usr/share/zabbix/sql-scripts/mysql/server.sql.gz | mysql --default-charact
 ```
 - Désactivez la fonction ***log_bin_trust_function_creators*** après avoir importé le schéma de la base de données en entrant ***set global log_bin_trust_function_creators = 0;***
 ```
-set global log_bin_trust_function_creators = 0;
-quit;
+SET GLOBAL log_bin_trust_function_creators = 1;
+QUIT;
 ```
 
 ### 5.  Configuration du serveur Zabbix & vérification
